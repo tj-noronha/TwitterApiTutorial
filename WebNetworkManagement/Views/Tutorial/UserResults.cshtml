@@ -1,0 +1,91 @@
+﻿@model WebNetworkManagement.Models.UserModel
+
+@{
+    ViewBag.Title = "UserResults";
+}
+
+<div class="demo">
+    <div class="text-center">
+        <h2>User Details</h2>
+    </div>
+
+    <table class="table" style="color: white;">
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                Date Joined
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Email Address
+            </th>
+            <th>
+                Follower Count
+            </th>
+            <th>
+                Profile Image
+            </th>
+            <th>
+                Most Recent Tweet
+            </th>
+        </tr>
+
+        @if (Model != null)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.DateJoined)
+                </td>
+                <td>
+                    @(string.IsNullOrEmpty(Model.Description) ? Html.Raw("No Description was supplied") : Html.DisplayFor(modelItem => Model.Description))
+                </td>
+                <td>
+                    @(string.IsNullOrEmpty(Model.Email) ? Html.Raw("No Email was supplied") : Html.DisplayFor(modelItem => Model.Email))
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.FollowerCount)
+                </td>
+                <td>
+                    <img src="
+                @Html.DisplayFor(modelItem => Model.ProfileImageUrl)
+                " alt="profile picture">
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Tweet)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @if (Model == null)
+    {
+        <div class="text-center">
+            @Html.ActionLink("Show Information", "GetUserDetails", "Tutorial", null, new { @type = "button", @class = "btn btn-link", @style = "margin-top:2%" })
+        </div>
+    }
+</div>
+
+<footer class="bottom2">
+    <a href="mailto:t.noronha1@uni.brighton.ac.uk">Email Tom Noronha</a>
+    <br />
+    <small>© 2018, Tom Noronha.</small>
+</footer>
+
+@section scripts{
+    <script type="text/javascript">
+        var footer = document.getElementById("footer");
+        footer.style.display = "none";
+
+        var x = document.getElementsByTagName("body")[0];
+        x.setAttribute("style", "padding-top: 65px;");
+    </script>
+}

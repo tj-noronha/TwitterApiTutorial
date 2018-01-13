@@ -1,0 +1,261 @@
+﻿@{
+    ViewBag.Title = "Connecting to Twitter";
+}
+
+<div class="wrapper2">
+    <div class="pad">
+        <div class="text-center">
+            <div class="row">
+                <div class="col">
+                    <h1>Connecting to Twitter API</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Browse to the Twitter <a href="https://apps.twitter.com/">application management</a> and click on your new twitter application.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    Locate the tab called 'Keys and Access tokens' (shown below) and click on it. Copy the 'Consumer Key', 'Consumer Secret', 'Access Token' and the 'Access Token Secret' into a notepad document as we will need these values later.
+                    You may have to generate an access token by clicking the 'Generate my Access Token and Token Secret' button.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/applicationManagement.png" id="applicationManagement" alt="Twitter Application Management" style="width:30%; height:70%; border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center" style="margin-bottom: 1%"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="managementApp" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="managementAppImg">
+            <div id="caption" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Open visual studio and create a new solution. The easiest option will be to create a command line program or a web application.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Right click on the project and click 'Manage NuGet Packages'. Click on the Browse tap and type 'LinqToTwitter' as shown below. Make sure you are searching across all package sources.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/nuget.png" id="nugetImage" alt="Installing API to the c# project" style="width:30%; height:70%; border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center" style="margin-bottom: 1%"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="nugetStuff" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="NugetStuffImg">
+            <div id="caption1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Install the package to your project, follow one of the two steps below depending on the project you are building.</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div class="allign"><b>If you are creating a command line application</b>, take the keys and tokens you have from the notpad document and paste these values into the ConnectToTwitter class as shown below:</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/consoleAppConnection.png" id="consoleAppConnection" alt="Connecting to twitter in a console app" style="width: 30%; height: 70%; border: 1px solid black; border-radius: 15px;">
+                </div>
+                <div class="text-center" style="margin-bottom: 1%"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="cac" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="cacImg">
+            <div id="caption2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign"><b>If you are creating a web application</b>, you can paste the key and token values into the web.config file and references these values from the ConnectToTwitter class as shown below:</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/connectToTwitter.png" id="connectingToTwitter" alt="Connecting to twitter with a web application" style="width:30%; height:70%; border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center" style="margin-bottom: 1%"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="ctt" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="cttImg">
+            <div id="caption3" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/webConfig.png" id="webConfig" alt="Web configuration for twitter authentication" style="width: 30%; height: 70%; margin-bottom: 2%; border: 1px solid black; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col">
+                <div class="allign"><b>If you do not copy the credentials correctly, you will not be able to send any requests as Twitter will not be able to authenticate your access.</b></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
+                    @Html.ActionLink("Previous", "TwitterApp", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
+                    @Html.ActionLink("Next", "HowToGetUserDetails", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('managementApp');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('applicationManagement');
+        var modalImg = document.getElementById("managementAppImg");
+        var captionText = document.getElementById("caption");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('nugetStuff');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('nugetImage');
+        var modalImg = document.getElementById("NugetStuffImg");
+        var captionText = document.getElementById("caption1");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[1];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('cac');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('consoleAppConnection');
+        var modalImg = document.getElementById("cacImg");
+        var captionText = document.getElementById("caption2");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[2];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('ctt');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('connectingToTwitter');
+        var modalImg = document.getElementById("cttImg");
+        var captionText = document.getElementById("caption3");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[3];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+}

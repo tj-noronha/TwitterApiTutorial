@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "How To Send Tweets";
+}
+<div class="wrapper2">
+    <div class="pad">
+        <div class="text-center">
+            <div class="row">
+                <div class="col">
+                    <h1>How to send Tweets via the API</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">By this point in the tutorial you would have already sucessfully authenticated with Twitter and retrived tweets from a specified user.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Sending tweets using the API is a very similar process to retrieving tweets. Once again, this process will differ depending on the application you are making.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    <b>If you are making a console app</b> you will need some sort of way of identifying that you want to send a tweet. The way i acheieved this is by checking the user input is 'send'.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    To do this, save the user input into a variable and check if this variable is the same as 'send' as shown below. This ensures that this method is only ever called when the user types 'send'.
+                    The user is then asked to enter the message they want to send and the message is then passed into the 'MessageToSend' method.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/getMessageFromUser.png?" id="getMessageFromUser" alt="Getting a message to send from user" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="gmfu" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="gmfuImg">
+            <div id="caption" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    <b>If you are making a Web application</b> I would recommend having a textbox with a send button underneath. This will allow a user to enter text and click the send button when they have finished
+                    entering the message they want to send as shown below.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/sendingTweetViaWeb.png?" id="sendingTweetViaWeb" alt="How to get user information via webpage" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="sending" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="sendingImg">
+            <div id="caption1" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    <b>Both of these applications</b> will need a 'MessageToSend' method which should contain the following code; this will take the user's message and attempt to send it via the API.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/messageToSend.png" alt="image" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    You will then need to create the SendTheTweet async method, remeber to use the same authentication and Twitter context as before (shown below).
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/sendTweet.png?" alt="image" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
+                    @Html.ActionLink("Previous", "HowTweets", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
+                    @Html.ActionLink("Next", "Reflection", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('gmfu');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('getMessageFromUser');
+        var modalImg = document.getElementById("gmfuImg");
+        var captionText = document.getElementById("caption");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('sending');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('sendingTweetViaWeb');
+        var modalImg = document.getElementById("sendingImg");
+        var captionText = document.getElementById("caption1");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[1];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+}

@@ -1,0 +1,89 @@
+﻿@using System.Collections.Specialized
+@model WebNetworkManagement.Models.TweetSentModel
+
+@{
+    ViewBag.Title = "Send Tweet";
+}
+
+<div class="demo">
+    <div class="text-center">
+        <div class="row">
+            <div class="col">
+                <h2>Send a tweet via the API</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                @using (Html.BeginForm("AttemptToSendTweet", "Tutorial", FormMethod.Post))
+                {
+                    <div>
+                        <textarea name="tweet" id="tweetText" rows="14" cols="10" wrap="soft" placeholder="Enter tweet here" style="height: 100px; width: 50%; border: 1px solid #1da1f2; border-radius: 15px; margin-top: 2%;"></textarea>
+                    </div>
+
+                    <div align="center">
+                        <div id="charLimit">256</div><div>Characters remaining</div>
+                    </div>
+
+                    <div id="go_button">
+                        <button type="submit" style="margin-top: 2%; background-color: #1da1f2; color: #fff; border: 1px solid #fff; border-radius: 15px;" class="btn btn-link" name="Submit">Tweet</button>
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        @if (Model != null && Model.Message.Equals("sent"))
+        {
+            <div class="text-center">
+                <div class="row">
+                    <div class="col">
+                        <div style="font-weight: bold; background-color: green; width: 200px; margin-left: auto; margin-right: auto; padding-top: 4px; padding-bottom: 4px;">Tweet was Sent!</div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Model != null && Model.Message.Equals("Error sending Tweet") || Model != null && Model.Message.Equals("Too many characters"))
+        {
+            <div class="row">
+                <div class="col">
+                    <div style="font-weight: bold; background-color: red; width: 200px; margin-left: auto; margin-right: auto; margin-top: 1%; padding-top: 4px; padding-bottom: 4px; border-radius: 15px;">
+                        @Model.Message
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<footer class="bottom2">
+    <a href="mailto:t.noronha1@uni.brighton.ac.uk">Email Tom Noronha</a>
+    <br />
+    <small>© 2018, Tom Noronha.</small>
+</footer>
+
+@section scripts{
+    <script>
+        window.onload = function () {
+            $("#tweetText").keypress(function () {
+                var textboxareatext = document.getElementById('tweetText').value.length;
+                var maxlimit = 255;
+
+                var a = parseInt(textboxareatext);
+                var b = (maxlimit - a).toString();
+
+                document.getElementById('charLimit').textContent = b;
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        var footer = document.getElementById("footer");
+        footer.style.display = "none";
+
+        var x = document.getElementsByTagName("body")[0];
+        x.setAttribute("style", "padding-top: 65px;");
+    </script>
+}

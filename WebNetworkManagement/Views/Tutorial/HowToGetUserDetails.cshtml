@@ -1,0 +1,216 @@
+﻿<div class="wrapper2">
+    <div class="pad">
+        <div class="text-center">
+            <div class="row">
+                <div class="col">
+                    <h1>How to get user details</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    The Twitter API allows you to access information about a user's account.I was surprised to see how much information is publically
+                    available about a user's account which may not be obvious from looking at someone's account via the Twitter website.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    In this tutorial I am going to show how to retreieve a user's description, the date they joined twitter, email address,  amount of followers, profile image and their most recent tweet.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    The first thing we need to do is to create a class which will act as an object for all of this data. I am going to call my class 'UserModel' and this is shown in the image below.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/userModel.png" alt="User details model" style="width: 30%; height: 95%; border: 1px solid; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    We will now need to make a requst to the API to retrieve these details. I used the LinqToTwitter <a href="https://github.com/JoeMayo/LinqToTwitter/wiki/Making-API-Calls">documentation</a> in order to request this information.
+                    I created a method called UserDetails which returned an instance of the object which contained the infromation recieved from the API as shown below.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/returnUserDetails.png?" id="returnUserDetails" alt="Getting user details from API" style="width: 30%; height: 95%; border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="rud" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="rudImg">
+            <div id="caption1" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    <b>If you are creating a console application</b> you can print these user details stright to the console with the code shown below:
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/userDetailsConsoleApp.png?" id="UserDetailsConsoleApp" alt="Returning user details in console app" style="width: 30%; height: 95%; border: 1px solid; border-radius: 10px;">
+                </div>
+                <div class="text-center"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="udca" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="udcaImg">
+            <div id="caption2" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    <b>If you are creating a web application</b> you will need to create a View which has access to the UserDetails model, you can then display all the attributes from the model as shown below:
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/displayUserDetailsWeb.png?" id="displayUserDetailsWeb" alt="Returning user details in web app" style="width: 30%; height: 95%; border: 1px solid; border-radius: 15px;">
+                </div>
+                <div class="text-center"><b>Click image to expand</b></div>
+            </div>
+        </div>
+
+        <div id="dudw" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="dudwImg">
+            <div id="caption3" style="color: white; text-align: center; margin-top: 5%"></div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    If you want to see the results of this method click the 'User Details' tab within the menu.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
+                    @Html.ActionLink("Previous", "Connect", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
+                    @Html.ActionLink("Next", "HowTweets", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('rud');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('returnUserDetails');
+        var modalImg = document.getElementById("rudImg");
+        var captionText = document.getElementById("caption1");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('udca');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('UserDetailsConsoleApp');
+        var modalImg = document.getElementById("udcaImg");
+        var captionText = document.getElementById("caption2");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[1];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+
+    <script type="text/javascript">
+        // Get the modal
+        var modal = document.getElementById('dudw');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('displayUserDetailsWeb');
+        var modalImg = document.getElementById("dudwImg");
+        var captionText = document.getElementById("caption3");
+        var navbar = document.getElementById("navbar");
+        var style = navbar.style.display;
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            navbar.style.display = "none";
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[2];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            navbar.style.display = style;
+        }
+    </script>
+}

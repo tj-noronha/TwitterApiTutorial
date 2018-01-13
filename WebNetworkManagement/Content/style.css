@@ -1,0 +1,487 @@
+﻿.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body {
+    background-color: lightslategray;
+}
+
+.bottom {
+    text-align: center;
+    clear: both;
+    border-top: 2px solid #292b2c;
+    padding-top: 3%;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.bottom2 {
+    text-align: center;
+    clear: both;
+    border-top: 2px solid #292b2c;
+    padding-top: 3%;
+    background-color: white;
+    padding-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.emailaddress {
+    margin-right: auto;
+    margin-left: auto;
+    clear: both;
+    width: 180px;
+    text-align: center;
+    float: left;
+    margin-top: 2%;
+}
+
+.text-area {
+    background-color: #c1c1c1;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.center {
+    text-align: center;
+}
+
+.bullet-section {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom: 1;
+    *display: inline;
+    margin-bottom: 30px;
+}
+
+.bulllet {
+    padding: 2px 5px;
+}
+
+.allign {
+    display: block;
+    margin: auto;
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: steelblue;
+}
+
+h2 {
+    color: white;
+}
+
+.demo {
+    padding-bottom: 3%;
+}
+
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    -webkit-transform: scale(1.25)
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 40px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(1)
+    }
+
+    to {
+        -webkit-transform: scale(1.25)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1)
+    }
+
+    to {
+        transform: scale(1.25)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-item + .flex-item {
+    margin-left: 10px;
+}
+
+.bottomnav {
+	
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    float: left;
+}
+
+
+.bottomnav li {
+	
+    width: 50%;
+    text-align: center;
+}
+
+.bottomnav li a:hover {
+	
+    color: #237F89;
+}
+
+.bottomnav li a {
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#header_text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    padding-top: 20px;
+    color: aliceblue;
+    margin-top: 5%;
+}
+
+@media only screen and (min-width:400px) and (max-width: 555px)  {
+    #header_text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        padding-top: 20px;
+        color: aliceblue;
+        margin-top: 8%;
+    }
+}
+
+@media only screen and (min-width:288px) and (max-width: 400px) {
+    #header_text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        padding-top: 20px;
+        color: aliceblue;
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (min-width:200px) and (max-width: 288px) {
+    #header_text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        padding-top: 20px;
+        color: aliceblue;
+        margin-top: 20%;
+    }
+}
+
+@media only screen and (min-width:100px) and (max-width: 200px) {
+    #header_text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        padding-top: 20px;
+        color: aliceblue;
+        margin-top: 25%;
+    }
+}
+
+.wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.wrapper2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 2%;
+}
+
+.wrapper3 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+
+@media only screen and (min-width:660px) and (max-width: 1040px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:428px) and (max-width: 660px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 24%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:340px) and (max-width: 428px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 19%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 28%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 19%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:300px) and (max-width: 340px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 22%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 30%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 22%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:275px) and (max-width: 300px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 35%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:235px) and (max-width: 275px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 40%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:200px) and (max-width: 235px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 34%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 44%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 34%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (max-width: 200px) {
+    .wrapper3 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 48%;
+    }
+    .wrapper2 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40%;
+        background-color: white;
+        border-radius: 15px;
+        margin-bottom: 5%;
+    }
+}
+@media only screen and (min-width:100px) and (max-width: 316px) {
+    h1 {
+        font-size: 120%;
+    }
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.headers {
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    text-decoration: underline;
+}
+
+.pad {
+    padding: 20px 20px 20px 20px;
+}
+
+a {
+    color: blue;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}

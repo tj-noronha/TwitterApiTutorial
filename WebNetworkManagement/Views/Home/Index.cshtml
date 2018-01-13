@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style="background-color: white">
+    <img src="~/images/banner01.jpg?" alt="website header" style="width: 100%; max-height: 450px; margin-top: 59px;">
+</div>
+
+<!--<div id="header_text">Twitter API Tutorial</div>-->
+
+<div class="wrapper">
+    <div class="pad">
+        <div class="title">Everything you need to know about the Twitter API</div>
+        <div class="headers">What is an API?</div>
+        <div class="content">
+            API stands for <b>Application Programming Interface</b> and allows application to interact with one another.
+            An API will allow you access to information either via the use of a unique key or via login credentials.
+            An example of an API is the OpenWeatherMap API which allows you to access information about the weather via json requests.
+
+        </div>
+
+        <div class="headers">What is involved?</div>
+        <div class="content">
+            In this tutorial we are going to be looking at the Twitter API.
+            In order to follow this tutorial you will need access to a C# or asp.net compiler such as Visual Studio.
+            By the end of this tutorial you should be able to do the following:
+            <div style="margin-top: 10px;">
+                <ul>
+                    <li>Create Twitter Application</li>
+                    <li>Connect to the Twitter API</li>
+                    <li>Retrieve a user's account details</li>
+                    <li>Retrieve tweets from a user</li>
+                    <li>Send a tweet</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="headers">Why is the Twitter API interesting?</div>
+        <div class="content">
+            The twitter API is very interesting as it allows you access to millions of people's accounts. The information you can retrieve from these accounts is very
+            intriguing and I will be demonstrating some of the possibilites of the API.
+            I have placed the result of the information within the menu items 'User Details', 'Get Tweets' and 'Send Tweets'.
+            You can view the result of this tutorial by clicking on the links at any time.
+        </div>
+
+
+        <div class="text-center">
+            <form>
+                @Html.ActionLink("Start", "Prerequisties", "Tutorial", null, new { @style = "background-color:#333; color:white; margin-top:4%; width:20%; border-radius:15px; padding:20px 0 20px 0;", @class = "btn btn-default" })
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <img src="~/images/envelope.png" class="rounded" alt="envelope" style="width:60px; height:40px; margin-top: 2%">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <h2>Want some tech news?</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <h3>receive news on the latest development &amp; happenings. It’s a no brainer...</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="emailaddress">
+            <div class="form-group">
+                <input id="form_email" type="email" name="email" class="form-control" placeholder="Your Email Address" data-error="Valid email is required.">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <form>
+                    <button type="button" style="margin-bottom: 3%; border-radius: 15px; padding: 8px 14px 12px 8px; border: 1px solid; text-align: center;" id="button1">Subscribe</button>
+                </form>
+                <div style="display: none;" id="subscribed"><b>You have Subscribed!</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/Script.js"></script>
+    
+    <script type="text/javascript">
+        var text = document.getElementsByTagName('h2');
+        text[0].setAttribute("style", "color:#292b2c");
+    </script>
+}

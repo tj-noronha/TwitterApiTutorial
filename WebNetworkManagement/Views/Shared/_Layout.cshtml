@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/style.css">
+    
+    <script>
+        $(document).ready(function () {
+            $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top" id="navbar">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--<nav class="navbar-brand"><img src="~/images/twitter.png" alt="Twitter Logo" style="width: 45px; height: 35px;"></nav>-->
+        <a class="navbar-brand" href="#">
+            <img src="~/images/twitter.png" width="45" height="35" class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Tutorial", "Prerequisties", "Tutorial", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Demo
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @Html.ActionLink("User Details", "UserDetails", "Home", null, new { @class = "nav-link dropdown-item", @style="color:black;" })
+                        @Html.ActionLink("Get Tweets", "GetTweets", "Home", null, new { @class = "nav-link dropdown-item", @style = "color:black;" })
+                        @Html.ActionLink("Send Tweet", "SendTweet", "Home", null, new { @class = "nav-link dropdown-item", @style = "color:black;" })
+                    </div>
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Reflection", "Reflection", "Tutorial", null, new { @class = "nav-link" })
+                </li>
+                @*<li class="nav-item">
+                    @Html.ActionLink("User Details", "UserDetails", "Home", null, new { @class = "nav-link dropdown-item" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Get Tweets", "GetTweets", "Home", null, new { @class = "nav-link dropdown-item" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Send Tweet", "SendTweet", "Home", null, new { @class = "nav-link dropdown-item" })
+                </li>*@
+            </ul>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+        <footer class="bottom" id="footer">
+            <a href="mailto:t.noronha1@uni.brighton.ac.uk">Email Tom Noronha</a>
+            <br />
+            <small>© 2018, Tom Noronha.</small>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

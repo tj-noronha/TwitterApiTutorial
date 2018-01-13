@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Twitter App";
+}
+
+<div class="wrapper2">
+    <div class="pad">
+        <div class="text-center">
+            <div class="row">
+                <div class="col">
+                    <h1>Creating your Twitter app</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">'Twitter is an online news and social networking service where users post and interact with messages'. It is estimated that there are around 328 million active monthly users (Aslam, 2017).</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    Connecting to the Twitter API will allow you to perform actions such as tweeting, following or messaging other acounts.
+                    In this tutorial, I will be focusing on how to retrieve user information, get tweets for a specific user and how to send tweets via the LinqToTwitter API.
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">
+                    The first step will be to sign into Twitter and create a new app <a href="https://apps.twitter.com/app/new">here</a>
+                    <br />In order to sucessfully create the application you will need the following infromation:
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <ul class="allign">
+                    <li>A Name for your app</li>
+                    <li>A Description for the app</li>
+                    <li>Website Address</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Please see the image below for further details</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <img src="~/images/createApp.png" alt="image" style="width: 50%; height: 95%; margin-top: 2%; border: 1px solid; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="allign">Once you have filled out these details, agree to the terms and conditions and click the 'Create your Twitter application' button</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
+                    @Html.ActionLink("Previous", "Prerequisties", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
+                    @Html.ActionLink("Next", "Connect", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

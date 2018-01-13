@@ -1,0 +1,86 @@
+﻿@model WebNetworkManagement.Models.ListOfTweetDetails
+
+<div class="demo">
+    <div class="text-center">
+        <div class="row">
+            <div class="col">
+                <h2>User Tweets</h2>
+            </div>
+        </div>
+    </div>
+    <table class="table" style="color: white;">
+        <tr>
+            <th>
+                Twitter Name
+            </th>
+            <th>
+                Tweet
+            </th>
+            <th>
+                Created At
+            </th>
+            <th>
+                Language
+            </th>
+            <th>
+                Retweet Count
+            </th>
+            <th>
+                Favourite Count
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model != null && Model.Details != null)
+            {
+                foreach (var item in Model.Details)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TweetDesc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Language)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RetweetCount)
+                    </td>
+                    <td>
+                        @(item.FavouriteCount == null ? Html.Raw("0") : Html.DisplayFor(modelItem => item.FavouriteCount))
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+
+    @if (Model == null)
+    {
+        <div class="text-center">
+            @Html.ActionLink("Show Tweets", "GetTweets", "Tutorial", null, new { @type = "button", @class = "btn btn-link", @style = "margin-top:2%" })
+        </div>
+    }
+</div>
+
+
+<footer class="bottom2">
+    <a href="mailto:t.noronha1@uni.brighton.ac.uk">Email Tom Noronha</a>
+    <br />
+    <small>© 2018, Tom Noronha.</small>
+</footer>
+
+@section scripts{
+    <script type="text/javascript">
+        var footer = document.getElementById("footer");
+        footer.style.display = "none";
+
+        var x = document.getElementsByTagName("body")[0];
+        x.setAttribute("style", "padding-top: 65px;");
+    </script>
+}
