@@ -15,55 +15,97 @@
 
         <div class="row">
             <div class="col">
-                <div class="allign">'Twitter is an online news and social networking service where users post and interact with messages'. It is estimated that there are around 328 million active monthly users (Aslam, 2017).</div>
+                <div class="headers">Why I chose the Twitter API?</div>
+                <div class="content">
+                    Prior to this assignment, I did not know much about the Twitter API and I believe using this API would be useful to a webmaster.
+                    I have some experience with creating .NET websites and I believed that this would suit my needs in demonstrating the uses of the Twitter API.
+                    I looked online for any pre-existing tutorials, but I could not find any which directly related to using the Twitter API.
+                    Whilst considering Twitter I found that the site had ‘330 million monthly active users’ (Statista, n.d.).
+                    I thought it would be great to integrate with a social media platform this large.
+                    I was also curious to find out the limits and capabilities of the API as I had assumed the functionality would be limited.
+                </div>
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col">
-                <div class="allign">
-                    Connecting to the Twitter API will allow you to perform actions such as tweeting, following or messaging other acounts.
-                    In this tutorial, I will be focusing on how to retrieve user information, get tweets for a specific user and how to send tweets via the LinqToTwitter API.
+                <div class="headers">Website Features:</div>
+                <div class="content">
+                    <ul>
+                        <li>Bootstrap 4.0</li>
+                        <li>Javascript</li>
+                        <li>Modal Images</li>
+                        <li>Google Captcha</li>
+                        <li>Code Snippet via Pastebin</li>
+                        <li>Responsive Web Design</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <div class="allign">
-                    The first step will be to sign into Twitter and create a new app <a href="https://apps.twitter.com/app/new">here</a>
-                    <br />In order to sucessfully create the application you will need the following infromation:
+                <div class="headers">What I have learnt about the Twitter API?</div>
+                <div class="content">
+                    There is a huge variety offered by the Twitter API such as direct messaging, getting local trends, tweeting and access to public user profiles. 
+                    Full documentation of the API can be found here <a href="https://developer.twitter.com/en/docs">twitter documentation</a>. 
+                    I also learnt how to connect to the Twitter API within visual studio. 
+                    I also considered other social media platforms such as Instagram, but I felt that Twitter was much more suitable due to its ease and vast capabilities.
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <ul class="allign">
-                    <li>A Name for your app</li>
-                    <li>A Description for the app</li>
-                    <li>Website Address</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="allign">Please see the image below for further details</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/createApp.png" alt="image" style="width: 50%; height: 95%; margin-top: 2%; border: 1px solid; border-radius: 15px;">
+                <div class="headers">What went well?</div>
+                <div class="content">
+                    Interacting with the API was relatively straight forward, the documentation provided by the author of the LinqToTwitter APi was very well structured and there were several wiki articles issued online. 
+                    Arguably the hardest part of using the API was ensuring the code authenticated with the Twitter App. 
+                    Once I had successfully connected, I just had to decide which part of the API I wanted to demonstrate. 
+                    I based this on the most popular functions on Twitter, user profiles and tweets.
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <div class="allign">Once you have filled out these details, agree to the terms and conditions and click the 'Create your Twitter application' button</div>
+                <div class="headers">What didn’t go well?</div>
+                <div class="content">
+                    Since I wanted to demo the API, I decided to write the web project as a MVC .NET web project as this would allow me full access to the API and would allow me to display the results on the web page. 
+                    There were several issues with this, for example I could not host the web application at university. 
+                    This meant that I had to consider hosting services such as Azure and Amazon Web Services. 
+                    I found that since I had created the application in Visual Studio (a Microsoft owned platform) it was very easy to integrate with Azure. 
+                    Secondly, since I was hosting through Azure, I felt that live exposure of the API’s features would be a hacker’s dream. 
+                    I therefore decided to make aspects such as ‘sending tweets’ unavailable through the web application since this would allow users to post anything they wanted from the web application. 
+                    I also thought that users could keep refreshing the webpage to send multiple requests to the Twitter API and this would eventually lock me out of the API due to request throttling. 
+                    I therefore decided to implement a recapture as this would enforce security on the website and ensure bots were unable to spam the API. 
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="headers">What I enjoyed about creating this tutorial:</div>
+                <div class="content">
+                    I have enjoyed creating this tutorial as I have learnt a lot about web technologies such as using bootstrap, modal images, google captcha and creating a responsive web design. 
+                    I have not created a web application recently and therefore a lot of reading was needed to write the HTML and CSS for the webpage. 
+                    I also used JavaScript to add further capability to the website. 
+                    I looked back at the website I had created in first year and found that with extensive reading and programming knowledge, I could build a web application that looked better and had greater functionality. 
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div class="headers">Evaluation:</div>
+                <div class="content">
+                    As previously mentioned the Twitter API provides an extensive amount of data available to a developer. 
+                    One weakness of the Twitter API is that you can only submit 15 requests every 15 minutes and therefore you cannot keep up to date constantly. 
+                    I feel that I have learnt a great deal about the API itself and about all the technologies used in creating this web application. 
+                    To achieve this webpage, I used several references which are detailed below. 
+                    In order to create the webpage, I found that w3schools was very useful for HTML, CSS and JavaScript. 
+                    When it came to the backend of the web application I found numerous references such as stackoverflow and GitHub were very useful.
+                </div>
             </div>
         </div>
 
@@ -71,8 +113,7 @@
         <div class="row">
             <div class="col">
                 <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
-                    @Html.ActionLink("Previous", "Prerequisties", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
-                    @Html.ActionLink("Next", "Connect", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                    @Html.ActionLink("Previous", "EndResult", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
                 </div>
             </div>
         </div>
