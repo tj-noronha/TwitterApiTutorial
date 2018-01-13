@@ -56,12 +56,14 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -109,6 +111,7 @@
     <Compile Include="logic\ConnectToTwitter.cs" />
     <Compile Include="logic\GetUserDetails.cs" />
     <Compile Include="logic\GetUserTweets.cs" />
+    <Compile Include="logic\ReCaptchaResponse.cs" />
     <Compile Include="logic\SendTweet.cs" />
     <Compile Include="Models\TweetDetails.cs" />
     <Compile Include="Models\TweetSentModel.cs" />
@@ -164,6 +167,7 @@
     <Content Include="Views\Tutorial\HowToSendTweets.cshtml" />
     <Content Include="Views\Tutorial\HowToGetUserDetails.cshtml" />
     <Content Include="Views\Tutorial\Reflection.cshtml" />
+    <Content Include="Views\Tutorial\EndResult.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

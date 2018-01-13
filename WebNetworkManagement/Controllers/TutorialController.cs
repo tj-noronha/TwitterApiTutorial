@@ -1,6 +1,7 @@
-﻿using System;
+﻿using System.Net;
 using System.Web.Mvc;
 using LinqToTwitter;
+using Newtonsoft.Json;
 using WebNetworkManagement.logic;
 using WebNetworkManagement.Models;
 
@@ -11,7 +12,7 @@ namespace WebNetworkManagement.Controllers
         private static readonly ConnectToTwitter Connection = new ConnectToTwitter();
         private static readonly GetUserDetails Details = new GetUserDetails();
         private static readonly GetUserTweets Tweets = new GetUserTweets();
-        private static readonly TwitterContext Context =  new TwitterContext(Connection.ConnectionToTwitter());
+        private static readonly TwitterContext Context = new TwitterContext(Connection.ConnectionToTwitter());
         private static readonly SendTweet SendTweet = new SendTweet();
 
         // GET: Tutorial
@@ -26,14 +27,15 @@ namespace WebNetworkManagement.Controllers
             return View("../Tutorial/Prerequisites");
         }
 
-        
+        public ActionResult EndResult()
+        {
+            return View("../Tutorial/EndResult");
+        }
+
         public ActionResult GetUserDetails()
         {
-            //var auth = _connection.ConnectionToTwitter();
-            //var context = new TwitterContext(auth);
-
+            TempData["valid"] = "";
             var details = Details.UserDetails(Context);
-
             return View("UserResults", details);
         }
 
@@ -54,8 +56,6 @@ namespace WebNetworkManagement.Controllers
 
         public ActionResult GetTweets()
         {
-            //var auth = _connection.ConnectionToTwitter();
-            //var context = new TwitterContext(auth);
 
             var allTweetDetails = Tweets.GetTweetsFromUser(Context);
             return View("GetTweets", allTweetDetails);
@@ -76,13 +76,16 @@ namespace WebNetworkManagement.Controllers
             var modelToPass = new TweetSentModel();
             if (tweet.Length < 260)
             {
-                if (SendTweet.SendAtweetFromUi(tweet, Context))
-                {
-                    modelToPass.Message = "sent";
-                    return View("../Tutorial/SendTweet", modelToPass);
-                }
+                //if (SendTweet.SendAtweetFromUi(tweet, Context))
+                //{
+                //    modelToPass.Message = "sent";
+                //    return View("../Tutorial/SendTweet", modelToPass);
+                //}
 
-                modelToPass.Message = "Error sending Tweet";
+                //modelToPass.Message = "Error sending Tweet";
+                //return View("../Tutorial/SendTweet", modelToPass);
+
+                modelToPass.Message = "sent";
                 return View("../Tutorial/SendTweet", modelToPass);
             }
 
@@ -98,6 +101,70 @@ namespace WebNetworkManagement.Controllers
         public ActionResult Connect()
         {
             return View("ConnectToTwitter");
+        }
+
+        [HttpPost]
+        public ActionResult ValidateCaptcha(string viewName)
+        {
+            var response = Request["g-recaptcha-response"];//secret that was generated in key value pair
+            const string secret = "6LdymEAUAAAAAPkg73bq3c4n6LipM3yTmOawqWVI";
+
+            var client = new WebClient();
+            var reply =
+                client.DownloadString(
+                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}",
+                        secret, response));
+
+            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
+
+            //when response is false check for the error message
+            if (!string.IsNullOrWhiteSpace(captchaResponse.Success))
+            {
+                if (captchaResponse.ErrorCodes?.Count <= 0)
+                {
+                    var error = captchaResponse.ErrorCodes[0].ToLower();
+                    switch (error)
+                    {
+                        case ("missing-input-secret"):
+                            ViewBag.Message = "The secret parameter is missing.";
+                            break;
+                        case ("invalid-input-secret"):
+                            ViewBag.Message = "The secret parameter is invalid or malformed.";
+                            break;
+
+                        case ("missing-input-response"):
+                            ViewBag.Message = "The response parameter is missing.";
+                            break;
+                        case ("invalid-input-response"):
+                            ViewBag.Message = "The response parameter is invalid or malformed.";
+                            break;
+
+                        default:
+                            ViewBag.Message = "Error occured. Please try again";
+                            break;
+                    }
+
+                    ViewBag.Message = "InValid";
+                    return View(viewName);
+                }
+                else if (captchaResponse.Success == "True")
+                {
+                    if (viewName == "UserResults")
+                    {
+                        var details = Details.UserDetails(Context);
+                        return View("UserResults", details);
+                    }
+                    if (viewName == "GetTweets")
+                    {
+                        var allTweetDetails = Tweets.GetTweetsFromUser(Context);
+                        return View("GetTweets", allTweetDetails);
+                    }
+                    return View(viewName);
+                }
+            }
+
+            ViewBag.Message = "Invalid";
+            return View(viewName);
         }
     }
 }
