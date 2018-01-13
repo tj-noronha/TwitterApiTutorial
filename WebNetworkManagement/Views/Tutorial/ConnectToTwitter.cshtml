@@ -45,7 +45,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="allign">Open visual studio and create a new solution. The easiest option will be to create a command line program or a web application.</div>
+                <div class="allign">Open visual studio and create a new solution. The easiest option will be to create a command line <!--program or a web--> application.</div>
             </div>
         </div>
 
@@ -72,14 +72,14 @@
 
         <div class="row">
             <div class="col">
-                <div class="allign">Install the package to your project, follow one of the two steps below depending on the project you are building.</div>
+                <div class="allign">Install the package to your project, this will allow you to call all methods within the API. In order to use this API you will need to reference it within every class by placing <b>using LinqToTwitter;</b> at the top of each class.<!--follow one of the two steps below depending on the project you are building.--></div>
             </div>
         </div>
 
 
         <div class="row">
             <div class="col">
-                <div class="allign"><b>If you are creating a command line application</b>, take the keys and tokens you have from the notpad document and paste these values into the ConnectToTwitter class as shown below:</div>
+                <div class="allign"><b>If you are creating a command line application</b>, take the keys and tokens you have from the notpad document and paste these values into a new class. I have called the class 'ConnectToTwitter' as shown below:</div>
             </div>
         </div>
 
@@ -98,47 +98,18 @@
             <div id="caption2"></div>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="allign"><b>If you are creating a web application</b>, you can paste the key and token values into the web.config file and references these values from the ConnectToTwitter class as shown below:</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/connectToTwitter.png" id="connectingToTwitter" alt="Connecting to twitter with a web application" style="width:30%; height:70%; border: 1px solid; border-radius: 15px;">
-                </div>
-                <div class="text-center" style="margin-bottom: 1%"><b>Click image to expand</b></div>
-            </div>
-        </div>
-
-        <div id="ctt" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="cttImg">
-            <div id="caption3" style="color: white; text-align: center; margin-top: 5%"></div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/webConfig.png" id="webConfig" alt="Web configuration for twitter authentication" style="width: 30%; height: 70%; margin-bottom: 2%; border: 1px solid black; border-radius: 15px;">
-                </div>
-            </div>
-        </div>
-
         <br />
         <div class="row">
             <div class="col">
                 <div class="allign"><b>If you do not copy the credentials correctly, you will not be able to send any requests as Twitter will not be able to authenticate your access.</b></div>
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col">
                 <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
-                    @Html.ActionLink("Previous", "TwitterApp", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
-                    @Html.ActionLink("Next", "HowToGetUserDetails", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                    @Html.ActionLink("Previous", "TwitterApp", "Tutorial", null, new { @class = "prev" })
+                    @Html.ActionLink("Next", "HowToGetUserDetails", "Tutorial", null, new { @class = "next" })
                 </div>
             </div>
         </div>
@@ -231,31 +202,4 @@
         }
     </script>
 
-    <script type="text/javascript">
-        // Get the modal
-        var modal = document.getElementById('ctt');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('connectingToTwitter');
-        var modalImg = document.getElementById("cttImg");
-        var captionText = document.getElementById("caption3");
-        var navbar = document.getElementById("navbar");
-        var style = navbar.style.display;
-
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            navbar.style.display = "none";
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[3];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            navbar.style.display = style;
-        }
-    </script>
 }

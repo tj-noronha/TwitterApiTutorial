@@ -485,3 +485,86 @@ html {
     position: relative;
     min-height: 100%;
 }
+
+.prev {
+    float: left;
+    background-color: #333;
+    color: white;
+    width: 200px;
+    border-radius: 15px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.next {
+    float: left;
+    background-color: #333;
+    color: white;
+    width: 200px;
+    border-radius: 15px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+
+@media only screen and (min-width:244px) and (max-width: 300px) {
+    .prev {
+        float: left;
+        background-color: #333;
+        color: white;
+        width: 150px;
+        border-radius: 15px;
+        padding: 10px 0 10px 0;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .next {
+        float: left;
+        background-color: #333;
+        color: white;
+        width: 150px;
+        border-radius: 15px;
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
+
+    .allign {
+        display: inline;
+        margin: auto;
+        width: 90%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 244px) {
+    .prev {
+        float: left;
+        background-color: #333;
+        color: white;
+        width: 100px;
+        border-radius: 15px;
+        padding: 10px 0 10px 0;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .next {
+        float: left;
+        background-color: #333;
+        color: white;
+        width: 100px;
+        border-radius: 15px;
+        padding: 10px 0 10px 0;
+        text-align: center;
+    }
+
+    .allign {
+        display: inline;
+        margin: auto;
+        width: 90%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

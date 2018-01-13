@@ -14,32 +14,15 @@
         <div class="row">
             <div class="col">
                 <div class="allign">
-                    The first thing we need to do is call the method which connects us to twitter e.g.Call the ConnectionToTwitter class.
-                    There are numerous ways to do this but I would suggest creating a static instace of the ConnectionToTwitter class within your main program class as shown below.
+                    On this page, I am going to show how to retreieve a user's name, the tweet, when the tweet was created, the language of the tweet, the amount of retweets and favourites.
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/staticConnection.png" id="staticConnection" alt="Connection to Twitter" style="width: 35%; height: 80%;  border: 1px solid; border-radius: 15px;">
-                </div>
-                <div class="text-center"><b>Click image to expand</b></div>
-            </div>
-        </div>
-
-        <div id="sc" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="scImg">
-            <div id="caption"></div>
         </div>
 
         <div class="row">
             <div class="col">
                 <div class="allign">
-                    Once we have imported this class into our main program we will need to store the valid authentication into a variable. We can then use this variable to create a TwitterContext which will allow us to request information from Twitter.
-                    We can pass the TwitterConext method our authentication variable as shown below.
+                    The first thing we need to do is to create a class which will act as an object for all of this data. I am going to be calling this class 'TweetDetails' and this is shown in the image below.
                 </div>
             </div>
         </div>
@@ -47,32 +30,7 @@
         <div class="row">
             <div class="col">
                 <div class="text-center">
-                    <img src="~/images/authVariable.png" id="authVariable" alt="Authenication to Twitter" style="width: 35%; height: 80%;  border: 1px solid; border-radius: 15px;">
-                </div>
-                <div class="text-center"><b>Click image to expand</b></div>
-            </div>
-        </div>
-
-        <div id="av" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="avImg">
-            <div id="caption"></div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="allign">
-                    You should now decide what information we want to return from the tweet. In this example, I am going to be returning the following; username, tweet, creation time of tweet, language of the tweet, retweet amount, favourite amount.
-                    In order to achieve this, we should create a class which acts as the object for all of this information. I am going to be calling this class 'TweetDetails'.
-                    My implemenation of the 'TweetDetails' class is shown below.
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/tweetDetails.png" id="tweetDetails" alt="Class to represent information we want to display" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
+                    <img src="~/images/tweetDetails.png" id="tweetDetails" alt="Class to represent Tweet details" style="width: 30%; height: 80%;  border: 1px solid; border-radius: 15px;">
                 </div>
                 <div class="text-center"><b>Click image to expand</b></div>
             </div>
@@ -81,7 +39,7 @@
         <div id="tw" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="twImg">
-            <div id="caption"></div>
+            <div id="caption" style="color: white; text-align: center; margin-top: 8%"></div>
         </div>
 
         <div class="row">
@@ -105,7 +63,7 @@
         <div id="gt" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="gtImg">
-            <div id="caption"></div>
+            <div id="caption1" style="color: white; text-align: center; margin-top: 8%"></div>
         </div>
 
         <div class="row">
@@ -119,9 +77,8 @@
         <div class="row">
             <div class="col">
                 <div class="allign">
-                    In order to print out all of the tweet details we will need to loop through the list which contains all of the tweet details.
-                    The amount in the list will correspond to the number of tweets for that user. For example if there are 5 items in the list, this will mean that the user has only sent 5 tweets.
-                    The code used to display the information for each tweet is shown below.
+                    In order to print out all the tweet details to the console, we will need to alter the main method of the program as shown below.
+                    As you can see in the image, we have added code to print out all the details we have just retrieved from the API.
                 </div>
             </div>
         </div>
@@ -138,53 +95,22 @@
         <div id="pt" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="ptImage">
-            <div id="caption"></div>
+            <div id="caption2" style="color: white; text-align: center; margin-top: 8%"></div>
         </div>
 
         <div class="row">
             <div class="col">
                 <div class="allign">
-                    This will always bring back the latest tweets for a user. Please click the 'Get Tweets' item in the menu if you want to see this information displayed on the webpage.
+                    This will always bring back the latest tweets for a user. If you want to see the results of this method click the 'User Tweets' section within the Demo tab.
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="allign">
-                    <b>If you are making a web application you will need to print details to the webpage</b>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="allign">
-                    The easiest way to do this is to open a View and provide the view with a reference to the TweetDetails model as shown below. You will then be able to print out all details for the model.
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <div class="text-center">
-                    <img src="~/images/displayTweetsWebpage.png" id="displayTweetsWebpage" alt="Shows how to print information on a webpage" style="width: 51%; height: 80%;  border: 1px solid; border-radius: 15px;">
-                </div>
-                <div class="text-center"><b>Click image to expand</b></div>
-            </div>
-        </div>
-
-        <div id="dtw" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="dtwImg">
-            <div id="caption"></div>
         </div>
 
         <div class="row">
             <div class="col">
                 <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
-                    @Html.ActionLink("Previous", "Connect", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center; margin-right:5px;" })
-                    @Html.ActionLink("Next", "HowToSendTweets", "Tutorial", null, new { @style = "float:left; background-color:#333; color:white; width:200px; border-radius:15px; padding:20px 0 20px 0; text-align:center;" })
+                    @Html.ActionLink("Previous", "HowToGetUserDetails", "Tutorial", null, new { @class = "prev" })
+                    @Html.ActionLink("Next", "HowToSendTweets", "Tutorial", null, new { @class = "next" })
                 </div>
             </div>
         </div>
@@ -193,90 +119,6 @@
 
 @section scripts
 {
-    <script type="text/javascript">
-        // Get the modal
-        var modal = document.getElementById('dtw');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('displayTweetsWebpage');
-        var modalImg = document.getElementById("dtwImg");
-        var captionText = document.getElementById("caption");
-        var navbar = document.getElementById("navbar");
-        var style = navbar.style.display;
-
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            navbar.style.display = "none";
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            navbar.style.display = style;
-        }
-    </script>
-
-    <script type="text/javascript">
-        // Get the modal
-        var modal = document.getElementById('pt');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('printTweets');
-        var modalImg = document.getElementById("ptImage");
-        var captionText = document.getElementById("caption");
-        var navbar = document.getElementById("navbar");
-        var style = navbar.style.display;
-
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            navbar.style.display = "none";
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            navbar.style.display = style;
-        }
-    </script>
-
-    <script type="text/javascript">
-        // Get the modal
-        var modal = document.getElementById('gt');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('getTweets');
-        var modalImg = document.getElementById("gtImg");
-        var captionText = document.getElementById("caption");
-        var navbar = document.getElementById("navbar");
-        var style = navbar.style.display;
-
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            navbar.style.display = "none";
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-            navbar.style.display = style;
-        }
-    </script>
-
     <script type="text/javascript">
         // Get the modal
         var modal = document.getElementById('tw');
@@ -304,15 +146,15 @@
             navbar.style.display = style;
         }
     </script>
-
+    
     <script type="text/javascript">
         // Get the modal
-        var modal = document.getElementById('av');
+        var modal = document.getElementById('gt');
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('authVariable');
-        var modalImg = document.getElementById("avImg");
-        var captionText = document.getElementById("caption");
+        var img = document.getElementById('getTweets');
+        var modalImg = document.getElementById("gtImg");
+        var captionText = document.getElementById("caption1");
         var navbar = document.getElementById("navbar");
         var style = navbar.style.display;
 
@@ -324,7 +166,7 @@
         }
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("close")[1];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
@@ -335,12 +177,12 @@
 
     <script type="text/javascript">
         // Get the modal
-        var modal = document.getElementById('sc');
+        var modal = document.getElementById('pt');
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('staticConnection');
-        var modalImg = document.getElementById("scImg");
-        var captionText = document.getElementById("caption");
+        var img = document.getElementById('printTweets');
+        var modalImg = document.getElementById("ptImage");
+        var captionText = document.getElementById("caption2");
         var navbar = document.getElementById("navbar");
         var style = navbar.style.display;
 
@@ -352,7 +194,7 @@
         }
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("close")[2];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
@@ -360,4 +202,5 @@
             navbar.style.display = style;
         }
     </script>
+    
 }

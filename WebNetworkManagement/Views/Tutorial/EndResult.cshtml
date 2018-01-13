@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "EndResult";
+}
+
+<div class="wrapper2">
+    <div class="pad">
+        <div class="text-center">
+            <div class="row">
+                <div class="col">
+                    <h1>Final Result</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div style="width: 90%; margin-left: auto; margin-right: auto; border-radius: 15px;">
+            <script src="https://pastebin.com/embed_js/XfJ5euKn"></script>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div style="clear: both; margin-left: auto; margin-right: auto; display: table; margin-top: 2%;">
+                    @Html.ActionLink("Previous", "HowToSendTweets", "Tutorial", null, new { @class = "prev" })
+                    @Html.ActionLink("Next", "Reflection", "Tutorial", null, new { @class = "next" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

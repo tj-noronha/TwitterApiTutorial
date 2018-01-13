@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/Content/style.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     
     <script>
         $(document).ready(function () {
@@ -40,22 +41,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         @Html.ActionLink("User Details", "UserDetails", "Home", null, new { @class = "nav-link dropdown-item", @style="color:black;" })
-                        @Html.ActionLink("Get Tweets", "GetTweets", "Home", null, new { @class = "nav-link dropdown-item", @style = "color:black;" })
+                        @Html.ActionLink("User Tweets", "GetTweets", "Home", null, new { @class = "nav-link dropdown-item", @style = "color:black;" })
                         @Html.ActionLink("Send Tweet", "SendTweet", "Home", null, new { @class = "nav-link dropdown-item", @style = "color:black;" })
                     </div>
                 </li>
                 <li class="nav-item">
                     @Html.ActionLink("Reflection", "Reflection", "Tutorial", null, new { @class = "nav-link" })
                 </li>
-                @*<li class="nav-item">
-                    @Html.ActionLink("User Details", "UserDetails", "Home", null, new { @class = "nav-link dropdown-item" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Get Tweets", "GetTweets", "Home", null, new { @class = "nav-link dropdown-item" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Send Tweet", "SendTweet", "Home", null, new { @class = "nav-link dropdown-item" })
-                </li>*@
             </ul>
         </div>
     </nav>
