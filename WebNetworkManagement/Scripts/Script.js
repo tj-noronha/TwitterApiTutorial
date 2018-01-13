@@ -1,7 +1,7 @@
 ﻿window.onload = function () {
     document.getElementById("button1").onclick = function fun() {
 
-        var email = document.getElementById("form_email").value = "";
+        var email = document.getElementById("form_email");
 
         var button = document.getElementById("button1");
         button.style.display = "none";
