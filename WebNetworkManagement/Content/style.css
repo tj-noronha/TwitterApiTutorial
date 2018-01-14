@@ -291,7 +291,7 @@ h2 {
     margin-top: 6%;
     background-color: white;
     border-radius: 15px;
-    margin-bottom: 5%;
+    margin-bottom: 12%;
 }
 
 @media only screen and (min-width:660px) and (max-width: 1040px) {
@@ -302,7 +302,7 @@ h2 {
         margin-top: 12%;
         background-color: white;
         border-radius: 15px;
-        margin-bottom: 5%;
+        margin-bottom: 14%;
     }
     .wrapper2 {
         width: 80%;
@@ -507,7 +507,7 @@ html {
     text-align: center;
 }
 
-@media only screen and (min-width:244px) and (max-width: 300px) {
+@media only screen and (max-width: 572px) {
     .prev {
         float: left;
         background-color: #333;
@@ -515,8 +515,11 @@ html {
         width: 150px;
         border-radius: 15px;
         padding: 10px 0 10px 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+        clear: both;
         text-align: center;
-        margin-right: 5px;
     }
 
     .next {
@@ -526,45 +529,71 @@ html {
         width: 150px;
         border-radius: 15px;
         padding: 10px 0 10px 0;
+        margin-left: auto;
+        margin-right: auto;
+        clear: both;
         text-align: center;
-    }
-
-    .allign {
-        display: inline;
-        margin: auto;
-        width: 90%;
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
 }
 
-@media only screen and (max-width: 244px) {
-    .prev {
-        float: left;
-        background-color: #333;
-        color: white;
-        width: 100px;
-        border-radius: 15px;
-        padding: 10px 0 10px 0;
-        text-align: center;
-        margin-right: 5px;
+    @media only screen and (min-width:244px) and (max-width: 300px) {
+        .prev {
+            float: left;
+            background-color: #333;
+            color: white;
+            width: 150px;
+            border-radius: 15px;
+            padding: 10px 0 10px 0;
+            text-align: center;
+            margin-right: 5px;
+        }
+
+        .next {
+            float: left;
+            background-color: #333;
+            color: white;
+            width: 150px;
+            border-radius: 15px;
+            padding: 10px 0 10px 0;
+            text-align: center;
+        }
+
+        .allign {
+            display: inline;
+            margin: auto;
+            width: 90%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
 
-    .next {
-        float: left;
-        background-color: #333;
-        color: white;
-        width: 100px;
-        border-radius: 15px;
-        padding: 10px 0 10px 0;
-        text-align: center;
-    }
+    @media only screen and (max-width: 244px) {
+        .prev {
+            float: left;
+            background-color: #333;
+            color: white;
+            width: 100px;
+            border-radius: 15px;
+            padding: 10px 0 10px 0;
+            text-align: center;
+            margin-right: 5px;
+        }
 
-    .allign {
-        display: inline;
-        margin: auto;
-        width: 90%;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        .next {
+            float: left;
+            background-color: #333;
+            color: white;
+            width: 100px;
+            border-radius: 15px;
+            padding: 10px 0 10px 0;
+            text-align: center;
+        }
+
+        .allign {
+            display: inline;
+            margin: auto;
+            width: 90%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
-}
