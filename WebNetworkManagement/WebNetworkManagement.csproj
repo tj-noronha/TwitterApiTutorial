@@ -166,6 +166,7 @@
     <Content Include="Views\Tutorial\HowToGetUserDetails.cshtml" />
     <Content Include="Views\Tutorial\Reflection.cshtml" />
     <Content Include="Views\Tutorial\EndResult.cshtml" />
+    <None Include="Properties\PublishProfiles\TomTwitterApiTutorial - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
